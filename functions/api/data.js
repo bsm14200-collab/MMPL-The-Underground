@@ -1,1 +1,0 @@
-export async function onRequestGet({env}){const team=await env.DB.prepare('SELECT * FROM team WHERE id=1').first();const {results}=await env.DB.prepare('SELECT * FROM players ORDER BY slot').all();return Response.json({team,players:results},{headers:{'Cache-Control':'no-store'}})}
